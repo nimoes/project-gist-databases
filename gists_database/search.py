@@ -43,11 +43,4 @@ def search_gists(db_connection, **kwargs):
         updated_at__gte
         updated_at__lt
         updated_at__lte
-
-    These parameters will be operating against the created_at and updated_at fields using 
-    the corresponding comparison: gt means greater than, gte greater than or equal to, 
-    lt less than, lte less than or equal to.
-
-    That is, created_at__gt=datetime(2018, 1, 1) are all the Gists that were created 
-    AFTER January 1st 2018. If we use created_at__gt, that’d also include the corresponding day.
     """
