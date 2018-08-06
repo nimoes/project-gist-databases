@@ -22,9 +22,6 @@ def search_gists(db_connection, **kwargs):
             # data with given specifics retrieved in a tuple
             tup = db_connection.execute(query, {'github_id': val})
         elif key == 'created_at':
-            # 2014-05-03T20:26:08Z
-            # d = datetime(2014, 5, 3, 20, 26, 8)
-            # date = datetime.strptime(str(val), "%Y-%m-%d %H:%M:%S")
             query += "WHERE datetime(created_at) = :created_at"
             tup = db_connection.execute(query, {'created_at': val})
     # before returning, convert tup into Gist models or list of gist objects
